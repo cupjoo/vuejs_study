@@ -1,0 +1,29 @@
+.btn-danger {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-danger:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn-danger:focus, .btn-danger.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-danger.disabled, .btn-danger:disabled {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
+.show > .btn-danger.dropdown-toggle {
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btn-danger.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
