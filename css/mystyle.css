@@ -1,3 +1,12 @@
+/* jumbotron */
+.jumbotron {
+    background-image: url("../images/jumbotronBackground.jpg");
+    background-size: cover;
+    text-shadow: black 0.2em 0.2em 0.2em;
+    color: white;
+}
+
+/* btn-danger */
 .btn-danger {
     background-color: #007bff;
     border-color: #007bff;
@@ -26,4 +35,15 @@
 .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+/* card */
+.lecture-logo {
+    margin-left: 0.8rem;
+    margin-right: 2.2rem;
+    margin-bottom: 0.3rem;
+    float: left;
+}
+.card-body {
+  padding-top: 0.4rem;
 }
