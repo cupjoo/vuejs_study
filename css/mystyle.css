@@ -6,6 +6,11 @@
     color: white;
 }
 
+/* nav */
+#my_searchbar{
+    margin-left: 1.5rem;
+}
+
 /* btn-danger */
 .btn-danger {
     background-color: #007bff;
@@ -47,6 +52,6 @@
 .card-body {
   padding-top: 0.4rem;
 }
-#my_badge {
+.my_badge {
     color: red;
 }
