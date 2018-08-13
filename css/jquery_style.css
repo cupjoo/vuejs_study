@@ -1,0 +1,12 @@
+#navigation li {
+    list-style:none;
+    float:left;
+    padding:5px;
+}
+#navigation {
+    cursor:pointer;
+}
+#navigation .selected {
+    background-color:red;
+    color:white;
+}
