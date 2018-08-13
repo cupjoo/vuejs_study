@@ -1,9 +1,10 @@
 // jQuery 사용 예제
 
 
-// $(element|selector).method1().method2()
+// jQuery 기본 형식: $(element|selector).method1().method2()
 $('.welcome').html('hello word!').css('background-color','yellow');
 
+// 클래스 추가, 삭제
 $('#navigation li').on('click', function() {
     $('#navigation li').removeClass('selected');
     $(this).addClass('selected');

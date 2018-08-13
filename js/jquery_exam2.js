@@ -1,6 +1,7 @@
 // jQuery 사용 예제 2
 
 
+// event 다루기
 function clickHandler(){
     alert('Clicked!');
 }
@@ -15,4 +16,3 @@ $('#trigger_event').on('click', function () {
 $('#remove_event').on('click', function () {
     $('#click').off('click', clickHandler)
 });
-
