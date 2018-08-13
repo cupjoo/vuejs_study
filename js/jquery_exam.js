@@ -8,3 +8,6 @@ $('#navigation li').on('click', function() {
     $('#navigation li').removeClass('selected');
     $(this).addClass('selected');
 })
+
+// chain - jQuery 메소드는 자기 자신을 반환한다.
+$('#my_link').attr('href', 'https://naver.com').attr('target', '_black').css('color', 'red');
