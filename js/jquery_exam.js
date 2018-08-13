@@ -11,3 +11,7 @@ $('#navigation li').on('click', function() {
 
 // chain - jQuery 메소드는 자기 자신을 반환한다.
 $('#my_link').attr('href', 'https://naver.com').attr('target', '_black').css('color', 'red');
+
+// traverse - chain의 대상을 바꿔 체인을 연장시키는 방법
+$('#family').find('#father').css('background-color', 'green').end().find('#brother').css('background-color', 'gray');
+ 
