@@ -32,14 +32,4 @@ $('#replace_el').on('click', function () {
     $('<div>replaced</div>').replaceAll('p');
 });
 
-// 클래스 제어
-$('#first').click(function () {
-    $(this).toggleClass('highlight');
-});
-// 속성 제어
-$('input').keyup(function () {
-    var value = $(this).val();
-    $('#result').text(value);
-});
-
 // end of element 제어
