@@ -7,26 +7,24 @@
 </head>
 
 <body>
+<!-- 전역 & 지역 Component 예제 -->
 <div id="app">
-    <todo-list></todo-list>
     <todo-footer></todo-footer>
+    <todo-list></todo-list>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
     Vue.component('todo-footer', {
-        template: '<p>This is another child global component</p>',
+        template: '<p>This is another global child component</p>'
     });
-    var cmp = {
-        template: '<p>This is another child local component</p>'
-    };
+
     new Vue({
-        el:'#app',
-        data: {
-            message : 'This is a parent component'
-        },
+        el: '#app',
         components: {
-            'todo-list' : cmp
+            'todo-list': {
+                template: '<p>This is another local child component</p>'
+            }
         }
     });
 </script>
