@@ -1,3 +1,4 @@
+/* navigation */
 #navigation li {
     list-style:none;
     padding:5px;
@@ -8,4 +9,9 @@
 #navigation .selected {
     background-color:red;
     color:white;
+}
+
+/* highlight */
+.highlight{
+    background-color: yellow;
 }
