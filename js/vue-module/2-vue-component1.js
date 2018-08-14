@@ -1,7 +1,7 @@
 // 전역 & 지역 Component
 
 
-// 전역 component 등록 - 어디서든 해당 component를 사용할 수 있음
+// 전역 component 등록 - 모든 인스턴스가 해당 component를 사용할 수 있음
 Vue.component('my-global-component', {
     template: '<div>전역 컴포넌트가 등록되었습니다!</div>'
 });
@@ -20,4 +20,5 @@ new Vue({
 // second instance
 new Vue({
     el: '#app2'
+    // 현재 인스턴스 내에 선언되지 않은 전역 component도 사용할 수 있음
 });

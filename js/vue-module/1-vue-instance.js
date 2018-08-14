@@ -1,4 +1,19 @@
-// Vue Instance
+/*
+* Vue Instance Life Cycle
+*
+* beforeCreate
+* created
+*
+* beforeMount
+* mounted
+*
+* beforeUpdate
+* updated
+*
+* beforeDestroy
+* destroyed
+*
+*/
 
 /* Instance */
 new Vue({
@@ -24,21 +39,3 @@ new Vue({
         console.log('destroyed', this.my_message);
     }
 }); /* Instance */
-
-
-/*
-* Vue Instance Life Cycle
-*
-* beforeCreate
-* created
-*
-* beforeMount
-* mounted
-*
-* beforeUpdate
-* updated
-*
-* beforeDestroy
-* destroyed
-*
-*/
