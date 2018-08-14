@@ -11,7 +11,7 @@ $('#navigation li').on('click', function() {
 });
 
 // 클래스 토글
-$('#first').click(function () {
+$('#first').on('click', function () {
     $(this).toggleClass('highlight');
 });
 
