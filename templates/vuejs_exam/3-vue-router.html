@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue Router example</h1>
+    <p>
+        <!-- 라우터 특수 태그. 페이지 이동 태그 (a 태그와 동일) -->
+        <router-link to="/main">Link to Main component</router-link>
+        <router-link to="/login">Link to Login component</router-link>
+    </p>
+    <!-- 라우터 특수 태그. 컴포넌트가 뿌려지는 영역 -->
+    <router-view></router-view>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+<script>
+    // components
+    var Main = { template: '<div>main</div>' };
+    var Login = { template: '<div>login</div>' };
+
+    // router
+    var router = new VueRouter({
+        mode: 'history',
+        routes: [
+            // 현재 페이지가 path일 때, router-view를 component 내용으로 변경함
+            { path: '/main', component: Main },
+            { path: '/login', component: Login },
+        ]
+    });
+
+    // instance
+    new Vue({
+        router: router
+    }).$mount('#app');  // el 속성과 동일
+</script>
+</body>
+</html>
