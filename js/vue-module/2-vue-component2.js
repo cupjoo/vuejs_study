@@ -40,3 +40,26 @@ new Vue({
         }
     }
 });
+
+// 이벤트 발생과 수신 (하위 -> 상위)
+new Vue({
+    el: '#app3',
+    data: {
+        msg: 'Goodbye Vue!'
+    },
+    methods: {
+        printText: function () {
+            console.log('received an event!');
+        }
+    },
+    components: {
+        'child-comp': {
+            template: '<button v-on:click="showLog">Show</button>',
+            methods: {
+                showLog: function () {
+                    this.$emit('show_log');
+                }
+            }
+        }
+    }
+});
