@@ -26,3 +26,17 @@ new Vue ({
         'my-component2': cmp2
     }
 });
+
+// props 속성을 사용한 데이터 전달 (상위 -> 하위)
+new Vue({
+    el: '#app2',
+    data: {
+        msg: 'Hello Vue!'
+    },
+    components: {
+        'child-comp' : {
+            props: ['my_data'],
+            template: '<p>{{ my_data }}</p>',
+        }
+    }
+});
