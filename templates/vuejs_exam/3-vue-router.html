@@ -13,23 +13,47 @@
         <router-link to="/login">Link to Login component</router-link>
     </p>
     <!-- 라우터 특수 태그. 컴포넌트가 뿌려지는 영역 -->
+    <router-view name="my_header"></router-view>
     <router-view></router-view>
+    <router-view name="my_footer"></router-view>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
 <script>
-    // components
-    var Main = { template: '<div>main</div>' };
-    var Login = { template: '<div>login</div>' };
+    // Main components
+    var Body = { template: '<div>This is Body</div>' };
+    var Header = { template: '<div>This is Header</div>' };
+    var Footer = { template: '<div>This is Footer</div>' };
+
+    // Login components
+    var Login_Body = { template: '<div>This is Login Body</div>' };
+    var Login_Header = { template: '<div>This is Login Header</div>' };
+    var Login_Footer = { template: '<div>This is Login Footer</div>' };
 
     // router
     var router = new VueRouter({
         mode: 'history',
         routes: [
-            // 현재 페이지가 path일 때, router-view를 component 내용으로 변경함
-            { path: '/main', component: Main },
-            { path: '/login', component: Login },
+            {
+                // 현재 페이지가 path일 때, router-view를 component 내용으로 변경함
+                path: '/main',
+                components: {
+                    // 여러 컴포넌트를 변경시킴
+                    default: Body,
+                    my_header: Header,
+                    my_footer: Footer
+                }
+            },
+            {
+                path: '/login',
+                // 복수 component는 s를 붙임.
+                components: {
+                    default: Login_Body,
+                    my_header: Login_Header,
+                    my_footer: Login_Footer
+                }
+            },
         ]
     });
 
