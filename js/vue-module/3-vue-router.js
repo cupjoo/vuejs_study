@@ -2,26 +2,26 @@
 
 
 // Main components
-var Body = { template: '<div>This is Body</div>' };
-var Header = { template: '<div>This is Header</div>' };
-var Footer = { template: '<div>This is Footer</div>' };
+const Body = { template: '<div>This is Body</div>' };
+const Header = { template: '<div>This is Header</div>' };
+const Footer = { template: '<div>This is Footer</div>' };
 
 // Login components
-var Login_Body = {
+const Login_Body = {
     template: `
         <div>
             This is Login Header
             <router-view></router-view>
         </div>`
 };
-var Login_Header = { template: '<div>This is Login Header</div>' };
-var Login_Footer = { template: '<div>This is Login Footer</div>' };
+const Login_Header = { template: '<div>This is Login Header</div>' };
+const Login_Footer = { template: '<div>This is Login Footer</div>' };
 
 // Child component
-var User_Body = { template: '<div>This is only seen to you</div>'};
+const User_Body = { template: '<div>This is only seen to you</div>'};
 
 // Router
-var router = new VueRouter({
+const router = new VueRouter({
     routes: [
         {
             // 현재 페이지가 path일 때, router-view를 component 내용으로 변경함

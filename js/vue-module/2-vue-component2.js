@@ -2,7 +2,7 @@
 
 
 // 데이터 통신 시도
-var cmp1 = {
+const cmp1 = {
     template: '<div>First local component: {{ cmp1_data }}</div>',
     data: function () {
         return {
@@ -10,7 +10,7 @@ var cmp1 = {
         }
     }
 };
-var cmp2 = {
+const cmp2 = {
     template: '<div>Second local component: {{ cmp2_data }}</div>',
     data: function () {
         return {
