@@ -49,16 +49,16 @@ new Vue({
         msg: 'Goodbye Vue!'
     },
     methods: {
-        printText: function () {
+        parent_func: function () {
             console.log('received an event!');
         }
     },
     components: {
         'child-comp': {
-            template: '<button v-on:click="showLog">Show</button>',
+            template: '<button v-on:click="show_log">Show</button>',
             methods: {
-                showLog: function () {
-                    this.$emit('show_log');
+                show_log: function () {
+                    this.$emit('child_event');
                 }
             }
         }
