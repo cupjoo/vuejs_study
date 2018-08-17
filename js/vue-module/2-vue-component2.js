@@ -28,15 +28,16 @@ new Vue ({
 });
 
 // props 속성을 사용한 데이터 전달 (상위 -> 하위)
-new Vue({
+new Vue({   // 뷰 인스턴스가 상위 component가 됨
     el: '#app2',
     data: {
         msg: 'Hello Vue!'
     },
     components: {
         'child-comp' : {
-            props: ['my_data'],
-            template: '<p>{{ my_data }}</p>',
+            // props 속성은 상위 component의 속성을 불러올 수 있음
+            props: ['my_data'], // props 속성명 정의
+            template: '<p>{{ my_data }}</p>',   // 정의된 props 속성으로 템플릿 작성
         }
     }
 });
