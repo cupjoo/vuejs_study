@@ -45,19 +45,19 @@ new Vue({   // 뷰 인스턴스가 상위 component가 됨
 // 이벤트 발생과 수신 (하위 -> 상위)
 new Vue({
     el: '#app3',
-    data: {
-        msg: 'Goodbye Vue!'
-    },
     methods: {
+        // 하위 컴포넌트에서 상위 컴포넌트의 메소드를 호출함
         parent_func: function () {
             console.log('received an event!');
         }
     },
     components: {
         'child-comp': {
+            // 템플릿 자체는 아래 내용으로 바뀌지만, 컴포넌트 정의는 child-comp로 유지됨
             template: '<button v-on:click="show_log">Show</button>',
             methods: {
                 show_log: function () {
+                    // child_event를 발생시킴
                     this.$emit('child_event');
                 }
             }
