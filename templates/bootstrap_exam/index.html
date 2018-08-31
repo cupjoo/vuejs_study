@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>내 웹페이지</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/index_style.css">
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../static/css/index_style.css">
 </head>
 <body>
 <!-- navigation -->
@@ -64,48 +64,69 @@
     </div>
 </nav>
 
-<!-- list-group -->
 <div class="container">
-    <ul class="list-group mt-3">
-        <a href="#" class="list-group-item active">1강 Hello world</a>
-        <a href="#" class="list-group-item">2강 변수</a>
-        <a href="#" class="list-group-item">3강 데이터 타입</a>
-        <a href="#" class="list-group-item">4강 연산자</a>
-        <a href="#" class="list-group-item">5강 조건문과 반복문</a>
-    </ul>
-    <div class="mt-4 embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kjJC8v-837c"></iframe>
+    <!-- jumbotron -->
+    <div class="jumbotron mt-3">
+        <h1 class="text-center">부트 스트랩을 소개합니다.</h1>
+        <p class="text-center">부트 스트랩은 웹 사이트 디자인을 하는데 있어 유용한 프레임워크입니다.</p>
+        <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">자세히 알아보기</a></p>
     </div>
-</div>
 
-<!-- form -->
-<div class="container">
+    <!-- lecture -->
+    <div class="row">
+        <div class="col-md-4">
+            <h4>HTML & CSS</h4>
+            <p>HTML과 CSS는 웹페이지에서 정적인 요소들을 표현하는 언어이다. 버튼이나 텍스트 등의 요소는 HTMl로 표현되며, 해당 요소들의
+                색상이나 크기 등은 CSS로 표현한다.</p>
+            <p><a class="btn btn-default" href="#"
+                  data-target="#modal-1" data-toggle="modal">자세히 알아보기</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h4>Javascript</h4>
+            <p>Javascript는 웹페이지에서 사용자 동작을 정해진 로직에 따라 처리하는 언어이다.</p>
+            <p><a class="btn btn-default" href="#">자세히 알아보기</a> </p>
+        </div>
+        <div class="col-md-4">
+            <h4>Django</h4>
+            <p>Django는 Python 기반의 프레임워크로, 데이터를 필요로 하거나 서버의 자원을 필요로 하는 사용자 요청을
+                서버에서 처리한다.</p>
+            <p><a class="btn btn-default" href="#">자세히 알아보기</a> </p>
+        </div>
+    </div>
     <hr>
-    <form class="mt-5 col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">강의 평가</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>매우 좋음</option>
-                <option>좋음</option>
-                <option>보통</option>
-                <option>나쁨</option>
-                <option>매우 나쁨</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">기타 의견</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">평가 제출</button>
-    </form>
+
+    <!-- card  -->
+    <div class="card">
+        <h5 class="card-header text-white bg-primary mb-3">최신 강의 목록</h5>
+        <ul class="list-group list-group-flush">
+            <div class="list-group-item">
+                <img class="lecture-logo" src="../../static/img/html_logo.png" alt="HTML Logo">
+                <div class="card-body">
+                    <h5 class="card-title">HTML 기초&nbsp;<span class="badge my_badge">New</span></h5>
+                    <p class="card-text">웹 프론트엔드 초보자를 위한 HTML 기초 강의입니다.</p>
+                    <a href="#" class="btn btn-primary">강좌 신청하기</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <img class="lecture-logo" src="../../static/img/css_logo.png" alt="CSS Logo">
+                <div class="card-body">
+                    <h5 class="card-title">CSS 기초&nbsp;<span class="badge my_badge">New</span></h5>
+                    <p class="card-text">웹 프론트엔드 초보자를 위한 CSS 기초 강의입니다.</p>
+                    <a href="#" class="btn btn-primary">강좌 신청하기</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <img class="lecture-logo" src="../../static/img/js_logo.png" alt="JS Logo">
+                <div class="card-body">
+                    <h5 class="card-title">Javascript 심화</h5>
+                    <p class="card-text">현직 개발자를 위한 Javascript 심화 강의입니다.</p>
+                    <a href="#" class="btn btn-primary">강좌 신청하기</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <br>
 </div>
 
 <!-- footer -->
@@ -230,6 +251,27 @@
     </div>
     <!-- Copyright -->
 </footer>
+
+<!-- modal -->
+<div class="modal fade" id="modal-1" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">알림창</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                아직 구현이 완료되지 않은 서비스입니다.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

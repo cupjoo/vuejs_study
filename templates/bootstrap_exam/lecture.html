@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>내 웹페이지</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/index_style.css">
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../static/css/index_style.css">
 </head>
 <body>
 <!-- navigation -->
@@ -64,46 +64,48 @@
     </div>
 </nav>
 
-<!-- card -->
+<!-- list-group -->
 <div class="container">
-    <div class="card border-primary mt-3 mb-3">
-        <h5 class="card-header text-white bg-primary mb-3">최준영 강사</h5>
-        <div class="card-body">
-            <img class="lecture-logo" src="../images/js_logo.png" alt="JS Logo">
-            <h5 class="card-title">최준영</h5>
-            <p class="card-text">쌍문동 웹 프론트엔드 강사</p>
-        </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>강사명</th>
-                <th>강의 번호</th>
-                <th>강의 제목</th>
-                <th>강의 날짜</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>최준영</td>
-                <td>1</td>
-                <td>HTML 기초</td>
-                <td>2018-07-23</td>
-            </tr>
-            <tr>
-                <td>최준영</td>
-                <td>2</td>
-                <td>CSS 기초</td>
-                <td>2018-08-01</td>
-            </tr>
-            <tr>
-                <td>최준영</td>
-                <td>3</td>
-                <td>Javascript 심화</td>
-                <td>2018-08-05</td>
-            </tr>
-            </tbody>
-        </table>
+    <ul class="list-group mt-3">
+        <a href="#" class="list-group-item active">1강 Hello world</a>
+        <a href="#" class="list-group-item">2강 변수</a>
+        <a href="#" class="list-group-item">3강 데이터 타입</a>
+        <a href="#" class="list-group-item">4강 연산자</a>
+        <a href="#" class="list-group-item">5강 조건문과 반복문</a>
+    </ul>
+    <div class="mt-4 embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kjJC8v-837c"></iframe>
     </div>
+</div>
+
+<!-- form -->
+<div class="container">
+    <hr>
+    <form class="mt-5 col-md-6">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">강의 평가</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>매우 좋음</option>
+                <option>좋음</option>
+                <option>보통</option>
+                <option>나쁨</option>
+                <option>매우 나쁨</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">기타 의견</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">평가 제출</button>
+    </form>
 </div>
 
 <!-- footer -->
