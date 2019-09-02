@@ -3,13 +3,16 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Example from '@/components/Example'
 import TodoPage from '@/components/TodoPage'
+import axios from 'axios'
+
+Vue.prototype.$http = axios
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'Hello',
       component: HelloWorld
     },
@@ -19,7 +22,7 @@ export default new Router({
       component: Example
     },
     {
-      path: '/todos',
+      path: '/',
       name: 'TodoPage',
       component: TodoPage
     }
