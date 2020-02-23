@@ -1,1 +1,1 @@
-vuejs_study
+Toy projects for Frontend study
