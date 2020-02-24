@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import TodoListTemplate from './components/TodoListTemplate'
 import Form from './components/Form'
 import TodoItemList from './components/TodoItemList'
+import Palette from './components/Palette'
+
+const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6']
 
 export default class App extends Component {
   id = 3
 
   state = {
     input: '',
+    color: '#343a40',
     todos: [
-      { id: 0, text: 'Sass', checked: false },
-      { id: 1, text: 'Typescript', checked: true },
-      { id: 2, text: 'MobX', checked: false }
+      { id: 0, text: 'Sass', checked: false, color: '#343a40' },
+      { id: 1, text: 'Typescript', checked: true, color: '#f03e3e' },
+      { id: 2, text: 'MobX', checked: false, color: '#12b886' }
     ]
   }
 
@@ -21,12 +25,13 @@ export default class App extends Component {
     })
   }
   handleCreate = () => {
-    this.setState(({ input, todos }) => ({
+    this.setState(({ input, todos, color }) => ({
       input: '',
       todos: todos.concat({
         id: this.id++,
         text: input,
-        checked: false
+        checked: false,
+        color
       })
     }))
   }
@@ -56,32 +61,48 @@ export default class App extends Component {
       todos: todos.filter(todo => todo.id !== id)
     }))
   }
+  handleSelectColor = (color) => {
+    this.setState({
+      color
+    })
+  }
 
   render() {
-    const { input, todos } = this.state;
+    const { input, todos, color } = this.state;
     const { 
       handleChange, 
       handleCreate, 
       handleKeyPress, 
       handleToggle,
-      handleRemove
+      handleRemove,
+      handleSelectColor
     } = this;
 
     return (
-      <TodoListTemplate form={(
-        <Form 
-          value={input}
-          onKeyPress={handleKeyPress}
-          onChange={handleChange}
-          onCreate={handleCreate}
-        />
-      )}>
+      <TodoListTemplate
+        form={
+          <Form
+            value={input}
+            onKeyPress={handleKeyPress}
+            onChange={handleChange}
+            onCreate={handleCreate}
+            color={color}
+          />
+        }
+        palette={
+          <Palette
+            colors={colors}
+            selected={color}
+            onSelect={handleSelectColor}
+          />
+        }
+      >
         <TodoItemList
           todos={todos}
           onToggle={handleToggle}
           onRemove={handleRemove}
         />
       </TodoListTemplate>
-    )
+    );
   }
 }
