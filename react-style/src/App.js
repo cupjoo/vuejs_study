@@ -2,11 +2,15 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
+  let [funcShow, setFuncShow] = useState(true);
+  let [classShow, setClassShow] = useState(true);
   return (
     <div className="container">
       <h1>Hello</h1>
-      <FuncComp initNumber={2}></FuncComp>
-      <ClassComp initNumber={2}></ClassComp>
+      <input type="button" value="remove func" onClick={() => setFuncShow(false)}></input>
+      <input type="button" value="remove class" onClick={() => setClassShow(false)}></input>
+      {funcShow ? <FuncComp initNumber={2}></FuncComp> : null}
+      {classShow ? <ClassComp initNumber={2}></ClassComp> : null}
     </div>
   );
 }
@@ -19,7 +23,17 @@ function FuncComp(props){
   const [date, setDate] = useState(new Date().toString());
   
   // side effect
-  useEffect(()=> console.log('%cfunc => useEffect (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle));
+  useEffect(()=> {
+    console.log('%cfunc => useEffect (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle)
+    document.title = number;
+    // clean up
+    return () => console.log('%cfunc => useEffect return (componentDidMount & componentDidUpdate)'+(++funcId), funcStyle);
+  }, [number]); // 감시
+
+  useEffect(()=> {
+    console.log('%cfunc => useEffect (componentDidMount) '+(++funcId), funcStyle)
+    return () => console.log('%cfunc => useEffect return (componentWillUnmount)'+(++funcId), funcStyle);
+  }, []);
 
   console.log('%cfunc => render ' + (++funcId), funcStyle);
   return (
@@ -42,6 +56,9 @@ class ClassComp extends React.Component{
   }
   componentDidMount(){
    console.log('%cclass => componentDidMount', classStyle); 
+  }
+  componentWillUnmount(){
+    console.log('%cclass => componentWillUnmount', classStyle); 
   }
   render(){
     console.log('%cclass => render', classStyle); 
