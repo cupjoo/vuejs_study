@@ -1,14 +1,11 @@
-import React, {useState} from "react";
-import store from "../store";
+import {connect} from 'react-redux'
 import DisplayNumber from "../components/DisplayNumber";
 
-const Component = () => {
-    const [number, setNumber] = useState(store.getState().number)
-    store.subscribe(() => setNumber(store.getState().number))
-    
-    return (
-        <DisplayNumber number={number}></DisplayNumber>
-    );
+// map redux state to react props
+const mapStateToProps = (state) => {
+    return {
+        number: state.number
+    };
 };
 
-export default Component;
+export default connect(mapStateToProps)(DisplayNumber);

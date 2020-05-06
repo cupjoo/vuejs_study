@@ -1,13 +1,10 @@
-import React from "react";
-import store from "../store";
+import {connect} from 'react-redux'
 import AddNumber from "../components/AddNumber"
 
-const Component = () => {
-    return (
-        <AddNumber onClick={
-            (size) => store.dispatch({type: 'INCREMENT', size})
-        }></AddNumber>
-    );
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick: (size) => dispatch({type: 'INCREMENT', size})
+    };
 };
 
-export default Component;
+export default connect(null, mapDispatchToProps)(AddNumber);
